@@ -1,0 +1,5 @@
+C:\Users\Jan_Borowiak\Desktop\NetMentoring-Linq\Expressions.Task3.E3SQueryProvider.Test\obj\Debug\netcoreapp2.1\Expressions.Task3.E3SQueryProvider.Test.csproj.AssemblyReference.cache
+C:\Users\Jan_Borowiak\Desktop\NetMentoring-Linq\Expressions.Task3.E3SQueryProvider.Test\obj\Debug\netcoreapp2.1\Expressions.Task3.E3SQueryProvider.Test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jan_Borowiak\Desktop\NetMentoring-Linq\Expressions.Task3.E3SQueryProvider.Test\obj\Debug\netcoreapp2.1\Expressions.Task3.E3SQueryProvider.Test.AssemblyInfoInputs.cache
+C:\Users\Jan_Borowiak\Desktop\NetMentoring-Linq\Expressions.Task3.E3SQueryProvider.Test\obj\Debug\netcoreapp2.1\Expressions.Task3.E3SQueryProvider.Test.AssemblyInfo.cs
+C:\Users\Jan_Borowiak\Desktop\NetMentoring-Linq\Expressions.Task3.E3SQueryProvider.Test\obj\Debug\netcoreapp2.1\Expressions.Task3.E3SQueryProvider.Test.csproj.CoreCompileInputs.cache
