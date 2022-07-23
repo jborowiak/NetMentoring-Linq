@@ -11,7 +11,7 @@ namespace Expressions.Task3.E3SQueryProvider.Test
         #region SubTask 1 : operands order
 
         [Fact]
-        public void TestBinaryBackOrder()
+         public void TestBinaryBackOrder()
         {
             var translator = new ExpressionToFtsRequestTranslator();
             Expression<Func<EmployeeEntity, bool>> expression

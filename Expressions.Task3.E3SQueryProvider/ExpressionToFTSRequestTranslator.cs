@@ -33,24 +33,75 @@ namespace Expressions.Task3.E3SQueryProvider
 
                 return node;
             }
-            return base.VisitMethodCall(node);
+
+            switch (node.Method.Name)
+            {
+                case "Equals":
+                {
+                    return BuildInclusionOperation(node, "(", ")");
+                }
+                case "StartsWith":
+                {
+                    return BuildInclusionOperation(node, "(", "*)");
+                    }
+                case "EndsWith":
+                {
+                    return BuildInclusionOperation(node, "(*", ")");
+                    }
+                case "Contains":
+                {
+                    return BuildInclusionOperation(node, "(*", "*)");
+                    }
+                default:
+                    return base.VisitMethodCall(node);
+            }
         }
+
+        private Expression BuildInclusionOperation(MethodCallExpression node, string leftAppender, string rightAppender)
+        {
+            var value = node.Arguments[0];
+
+            Visit(node.Object);
+            _resultStringBuilder.Append(leftAppender);
+            Visit(value);
+            _resultStringBuilder.Append(rightAppender);
+
+            return node;
+        }
+
 
         protected override Expression VisitBinary(BinaryExpression node)
         {
             switch (node.NodeType)
             {
                 case ExpressionType.Equal:
-                    if (node.Left.NodeType != ExpressionType.MemberAccess)
-                        throw new NotSupportedException($"Left operand should be property or field: {node.NodeType}");
+                    var nodeTypes = new[] {node.Left.NodeType, node.Right.NodeType};
+                    if (!nodeTypes.Contains(ExpressionType.MemberAccess) ||
+                        !nodeTypes.Contains(ExpressionType.Constant))
+                    {
+                        throw new NotSupportedException(
+                            $"One operand should be property or field and the other should be field: {node.NodeType}");
+                    }
+                    if (nodeTypes.First() == ExpressionType.MemberAccess)
+                    {
+                        Visit(node.Left);
+                        _resultStringBuilder.Append("(");
+                        Visit(node.Right);
+                        _resultStringBuilder.Append(")");
+                    }
+                    else
+                    {
+                        Visit(node.Right);
+                        _resultStringBuilder.Append("(");
+                        Visit(node.Left);
+                        _resultStringBuilder.Append(")");
+                    }
+                    break;
 
-                    if (node.Right.NodeType != ExpressionType.Constant)
-                        throw new NotSupportedException($"Right operand should be constant: {node.NodeType}");
-
+                case ExpressionType.AndAlso:
                     Visit(node.Left);
-                    _resultStringBuilder.Append("(");
+                    _resultStringBuilder.Append("AND");
                     Visit(node.Right);
-                    _resultStringBuilder.Append(")");
                     break;
 
                 default:

@@ -1,0 +1,10 @@
+C:\Users\Jan_Borowiak\Desktop\NetMentoring-Linq\Expressions.Task3.E3SQueryProvider\bin\Debug\netcoreapp3.1\Expressions.Task3.E3SQueryProvider.deps.json
+C:\Users\Jan_Borowiak\Desktop\NetMentoring-Linq\Expressions.Task3.E3SQueryProvider\bin\Debug\netcoreapp3.1\Expressions.Task3.E3SQueryProvider.dll
+C:\Users\Jan_Borowiak\Desktop\NetMentoring-Linq\Expressions.Task3.E3SQueryProvider\bin\Debug\netcoreapp3.1\Expressions.Task3.E3SQueryProvider.pdb
+C:\Users\Jan_Borowiak\Desktop\NetMentoring-Linq\Expressions.Task3.E3SQueryProvider\obj\Debug\netcoreapp3.1\Expressions.Task3.E3SQueryProvider.csproj.AssemblyReference.cache
+C:\Users\Jan_Borowiak\Desktop\NetMentoring-Linq\Expressions.Task3.E3SQueryProvider\obj\Debug\netcoreapp3.1\Expressions.Task3.E3SQueryProvider.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jan_Borowiak\Desktop\NetMentoring-Linq\Expressions.Task3.E3SQueryProvider\obj\Debug\netcoreapp3.1\Expressions.Task3.E3SQueryProvider.AssemblyInfoInputs.cache
+C:\Users\Jan_Borowiak\Desktop\NetMentoring-Linq\Expressions.Task3.E3SQueryProvider\obj\Debug\netcoreapp3.1\Expressions.Task3.E3SQueryProvider.AssemblyInfo.cs
+C:\Users\Jan_Borowiak\Desktop\NetMentoring-Linq\Expressions.Task3.E3SQueryProvider\obj\Debug\netcoreapp3.1\Expressions.Task3.E3SQueryProvider.csproj.CoreCompileInputs.cache
+C:\Users\Jan_Borowiak\Desktop\NetMentoring-Linq\Expressions.Task3.E3SQueryProvider\obj\Debug\netcoreapp3.1\Expressions.Task3.E3SQueryProvider.dll
+C:\Users\Jan_Borowiak\Desktop\NetMentoring-Linq\Expressions.Task3.E3SQueryProvider\obj\Debug\netcoreapp3.1\Expressions.Task3.E3SQueryProvider.pdb
