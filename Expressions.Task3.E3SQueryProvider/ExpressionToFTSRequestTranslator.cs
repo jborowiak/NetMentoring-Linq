@@ -33,8 +33,58 @@ namespace Expressions.Task3.E3SQueryProvider
 
                 return node;
             }
+
+            if (node.Method.Name == "Equals")
+            {
+                var value = node.Arguments[0];
+                
+                Visit(node.Object);
+                _resultStringBuilder.Append("(");
+                Visit(value);
+                _resultStringBuilder.Append(")");
+
+                return node;
+            }
+
+            if (node.Method.Name == "StartsWith")
+            {
+                var value = node.Arguments[0];
+
+                Visit(node.Object);
+                _resultStringBuilder.Append("(");
+                Visit(value);
+                _resultStringBuilder.Append("*)");
+
+                return node;
+            }
+
+            if (node.Method.Name == "EndsWith")
+            {
+                var value = node.Arguments[0];
+
+                Visit(node.Object);
+                _resultStringBuilder.Append("(*");
+                Visit(value);
+                _resultStringBuilder.Append(")");
+
+                return node;
+            }
+
+            if (node.Method.Name == "Contains")
+            {
+                var value = node.Arguments[0];
+
+                Visit(node.Object);
+                _resultStringBuilder.Append("(*");
+                Visit(value);
+                _resultStringBuilder.Append("*)");
+
+                return node;
+            }
+
             return base.VisitMethodCall(node);
         }
+
 
         protected override Expression VisitBinary(BinaryExpression node)
         {
