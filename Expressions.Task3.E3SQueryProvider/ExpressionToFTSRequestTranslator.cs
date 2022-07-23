@@ -34,55 +34,39 @@ namespace Expressions.Task3.E3SQueryProvider
                 return node;
             }
 
-            if (node.Method.Name == "Equals")
+            switch (node.Method.Name)
             {
-                var value = node.Arguments[0];
-                
-                Visit(node.Object);
-                _resultStringBuilder.Append("(");
-                Visit(value);
-                _resultStringBuilder.Append(")");
-
-                return node;
+                case "Equals":
+                {
+                    return BuildInclusionOperation(node, "(", ")");
+                }
+                case "StartsWith":
+                {
+                    return BuildInclusionOperation(node, "(", "*)");
+                    }
+                case "EndsWith":
+                {
+                    return BuildInclusionOperation(node, "(*", ")");
+                    }
+                case "Contains":
+                {
+                    return BuildInclusionOperation(node, "(*", "*)");
+                    }
+                default:
+                    return base.VisitMethodCall(node);
             }
+        }
 
-            if (node.Method.Name == "StartsWith")
-            {
-                var value = node.Arguments[0];
+        private Expression BuildInclusionOperation(MethodCallExpression node, string leftAppender, string rightAppender)
+        {
+            var value = node.Arguments[0];
 
-                Visit(node.Object);
-                _resultStringBuilder.Append("(");
-                Visit(value);
-                _resultStringBuilder.Append("*)");
+            Visit(node.Object);
+            _resultStringBuilder.Append(leftAppender);
+            Visit(value);
+            _resultStringBuilder.Append(rightAppender);
 
-                return node;
-            }
-
-            if (node.Method.Name == "EndsWith")
-            {
-                var value = node.Arguments[0];
-
-                Visit(node.Object);
-                _resultStringBuilder.Append("(*");
-                Visit(value);
-                _resultStringBuilder.Append(")");
-
-                return node;
-            }
-
-            if (node.Method.Name == "Contains")
-            {
-                var value = node.Arguments[0];
-
-                Visit(node.Object);
-                _resultStringBuilder.Append("(*");
-                Visit(value);
-                _resultStringBuilder.Append("*)");
-
-                return node;
-            }
-
-            return base.VisitMethodCall(node);
+            return node;
         }
 
 
