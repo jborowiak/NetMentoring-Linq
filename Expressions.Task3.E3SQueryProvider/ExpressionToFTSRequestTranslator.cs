@@ -98,6 +98,12 @@ namespace Expressions.Task3.E3SQueryProvider
                     }
                     break;
 
+                case ExpressionType.AndAlso:
+                    Visit(node.Left);
+                    _resultStringBuilder.Append("AND");
+                    Visit(node.Right);
+                    break;
+
                 default:
                     throw new NotSupportedException($"Operation '{node.NodeType}' is not supported");
             };
